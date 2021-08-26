@@ -6,7 +6,9 @@
 parameters:
     locale: 'en'
     pusherKey: '%env(PUSHER_KEY)%'
+    pusherSecret: '%env(PUSHER_SECRET)%'
     pusherCluster: '%env(PUSHER_CLUSTER)%'
+    appID: '%env(PUSHER_APP_ID)%'
     
 services:
     # default configuration for services in *this* file

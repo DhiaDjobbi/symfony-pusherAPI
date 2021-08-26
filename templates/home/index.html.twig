@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
+{% block title %}Home page{% endblock %}
+{% block stylesheets %}
+    <style>
+        body {
+            font-family: "Lucida Console", monospace, sans-serif;
+            padding: 30px;
+        }
+    </style>
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>hellooo</h1>
+{# 
+    <h2 align="center" id="visitorCount">{{ visitorCount }}</h2>
+    <p align="center">person(s) currently viewing this page</p> #}
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block javascripts %}
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp/www/pusher/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp/www/pusher/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+        // Enable pusher logging - don't include this in production
+        //Pusher.logToConsole = true;
+
+        var pusher = new Pusher('{{ pusherKey }}', {
+        cluster: '{{pusherCluster}}'
+        });
+
+        var channel = pusher.subscribe("lol");
+        channel.bind('update', function(data) {
+        console.log(data.message);
+        alert(JSON.stringify(data.message));
+        });
+    </script>
 {% endblock %}
