@@ -97,6 +97,9 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.3.0"
     },
+    "laupifrpar/pusher-bundle": {
+        "version": "5.0.3"
+    },
     "monolog/monolog": {
         "version": "2.3.2"
     },
@@ -105,6 +108,12 @@
     },
     "nikic/php-parser": {
         "version": "v4.12.0"
+    },
+    "paragonie/random_compat": {
+        "version": "v9.99.100"
+    },
+    "paragonie/sodium_compat": {
+        "version": "v1.17.0"
     },
     "phar-io/manifest": {
         "version": "2.0.3"
@@ -167,6 +176,18 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "pusher/pusher-php-server": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "8dd3ea817217453e14ab596317177465211e01d2"
+        },
+        "files": [
+            "./config/packages/pusher_php_server.yaml"
+        ]
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
